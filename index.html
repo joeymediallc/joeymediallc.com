@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Site</title>
+  <meta name="description" content="A short description of your site goes here." />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Your Site" />
+  <meta property="og:description" content="A short description of your site goes here." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✦</text></svg>" />
+
+  <style>
+    :root {
+      --bg: #0f1115;
+      --surface: #171a21;
+      --text: #e8eaed;
+      --muted: #9aa0ac;
+      --accent: #6ea8fe;
+      --border: #262b36;
+      --max: 680px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --surface: #f6f7f9;
+        --text: #1a1d23;
+        --muted: #5b616e;
+        --accent: #2563eb;
+        --border: #e5e7eb;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: clamp(3rem, 12vh, 7rem) 1.25rem 2rem;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 0.75rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1.1;
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    .lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin: 0 0 2rem;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.3rem;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: transform 0.05s ease, opacity 0.15s ease;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 540px) {
+      .cards { grid-template-columns: repeat(3, 1fr); }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .card h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.925rem; }
+
+    footer {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 2.5rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Welcome</p>
+    <h1>Your headline goes here</h1>
+    <p class="lead">
+      One or two sentences that say what this is and why someone should care.
+      Edit this text in <code>index.html</code>.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="#">Primary action</a>
+      <a class="btn btn-secondary" href="#">Learn more</a>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Point one</h3>
+        <p>A short supporting detail about your offering.</p>
+      </div>
+      <div class="card">
+        <h3>Point two</h3>
+        <p>Another reason to keep reading or get in touch.</p>
+      </div>
+      <div class="card">
+        <h3>Point three</h3>
+        <p>Round it out with a third quick highlight.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Your Name &middot;
+    <a href="mailto:you@example.com">you@example.com</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
